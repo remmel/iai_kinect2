@@ -1100,11 +1100,11 @@ private:
       cv::flip(color, tmp, 1);
       if(colorFrame->format == libfreenect2::Frame::BGRX)
       {
-        cv::cvtColor(tmp, images[COLOR_HD], cv::COLOR_BGR2RGB);
+        cv::cvtColor(tmp, images[COLOR_HD], cv::COLOR_BGRA2BGR);
       }
       else
       {
-        cv::cvtColor(tmp, images[COLOR_HD], cv::COLOR_BGR2RGB);
+        cv::cvtColor(tmp, images[COLOR_HD], cv::COLOR_BGRA2BGR);
       }
     }
 
@@ -1180,11 +1180,11 @@ private:
       cv::flip(cv::Mat(sizeIr, CV_8UC4, registered.data), tmp, 1);
       if(color.format == libfreenect2::Frame::BGRX)
       {
-        cv::cvtColor(tmp, images[COLOR_SD_RECT], cv::COLOR_BGR2RGB);
+        cv::cvtColor(tmp, images[COLOR_SD_RECT], cv::COLOR_BGRA2BGR);
       }
       else
       {
-        cv::cvtColor(tmp, images[COLOR_SD_RECT], cv::COLOR_BGR2RGB);
+        cv::cvtColor(tmp, images[COLOR_SD_RECT], cv::COLOR_BGRA2BGR);
       }
     }
 
@@ -1247,19 +1247,19 @@ private:
     // MONO
     if(status[MONO_HD])
     {
-      cv::cvtColor(images[COLOR_HD], images[MONO_HD], cv::COLOR_BGR2RGB);
+      cv::cvtColor(images[COLOR_HD], images[MONO_HD], cv::COLOR_BGR2GRAY);
     }
     if(status[MONO_HD_RECT])
     {
-      cv::cvtColor(images[COLOR_HD_RECT], images[MONO_HD_RECT], cv::COLOR_BGR2RGB);
+      cv::cvtColor(images[COLOR_HD_RECT], images[MONO_HD_RECT], cv::COLOR_BGR2GRAY);
     }
     if(status[MONO_QHD])
     {
-      cv::cvtColor(images[COLOR_QHD], images[MONO_QHD], cv::COLOR_BGR2RGB);
+      cv::cvtColor(images[COLOR_QHD], images[MONO_QHD], cv::COLOR_BGR2GRAY);
     }
     if(status[MONO_QHD_RECT])
     {
-      cv::cvtColor(images[COLOR_QHD_RECT], images[MONO_QHD_RECT], cv::COLOR_BGR2RGB);
+      cv::cvtColor(images[COLOR_QHD_RECT], images[MONO_QHD_RECT], cv::COLOR_BGR2GRAY);
     }
   }
 
